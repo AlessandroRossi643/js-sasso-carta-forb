@@ -1,6 +1,5 @@
 // DICHIARAZIONE VARIABILI SFIDANTI
-var cpu1;
-var cpu2;
+var cpu1,cpu2;
 
 // DEFINIZIONE SCELTA RANDOM DEI DUE SFIDANTI
 // DEF GIOCATORE1
@@ -28,47 +27,47 @@ else if (cpu2>0.66) {
 }
 
 // STAMPA SCELTA GIOCATORI
-console.log(cpu1);
-console.log(cpu2);
+document.getElementById('player1').innerHTML="GIOCATORE 1: "+ cpu1;
+document.getElementById('player2').innerHTML="GIOCATORE 2: "+ cpu2;
 
 // FUNCTION PER DETERMINARE I RISULTATI DELLO SCONTRO
 function risultato(giocatore1,giocatore2){
 
   //CASO 1: I DUE SFIDANTI GIOCANO LO STESSO SEGNO
   if (giocatore1===giocatore2) {
-    return "Pareggio";
+    return "Pareggio!";
   }
 
   //CASO 2: IL GIOCATORE 1 GIOCA SASSO
   else if (giocatore1==="Sasso") {
     if (giocatore2==="Carta") {
-      return "Giocatore 2, Hai vinto";
+      return "Giocatore 2, Hai vinto!";
     }
     else if (giocatore2==="Forbici"){
-      return "Giocatore 1, Hai vinto";
+      return "Giocatore 1, Hai vinto!";
     }
   }
 
   //CASO 3: IL GIOCATORE 1 GIOCA CARTA
   else if (giocatore1==="Carta") {
     if (giocatore2==="Forbici") {
-      return "Giocatore 2, Hai vinto";
+      return "Giocatore 2, Hai vinto!";
     }
     else if(giocatore2==="Sasso"){
-      return "Giocatore 1, Hai vinto";
+      return "Giocatore 1, Hai vinto!";
     }
   }
 
   //CASO 4: IL GIOCATORE 1 GIOCA FORBICI
   else if (giocatore1==="Forbici") {
     if (giocatore2==="Sasso") {
-      return "Giocatore 2, Hai vinto";
+      return "Giocatore 2, Hai vinto!";
     }
     else if(giocatore2==="Carta"){
-      return "Giocatore 1, Hai vinto";
+      return "Giocatore 1, Hai vinto!";
     }
   }
 }
 
 // STAMPA DEL RISULTATO FINALE
-console.log(risultato(cpu1,cpu2));
+document.getElementById("risultato").innerHTML=(risultato(cpu1,cpu2));
