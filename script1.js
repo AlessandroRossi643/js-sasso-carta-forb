@@ -27,20 +27,22 @@ document.getElementById('player2').innerHTML="GIOCATORE 2: "+ cpu2;
 // FUNCTION PER DETERMINARE I RISULTATI DELLO SCONTRO
 function risultato(giocatore1,giocatore2){
 
+  var giocatore1,giocatore2;
+
   switch (giocatore1,giocatore2) {
     case giocatore1===giocatore2:
       return "Pareggio!";
       break;
 
-    case giocatore1==="Carta" && giocatore2==="Sasso":
-    case giocatore1==="Sasso" && giocatore2==="Forbici":
-    case giocatore1==="Forbici" && giocatore2==="Carta":
+    case giocatore1==="Carta", giocatore2==="Sasso":
+    case giocatore1==="Sasso",  giocatore2==="Forbici":
+    case giocatore1==="Forbici",  giocatore2==="Carta":
       return "Giocatore 1, Hai vinto!";
       break;
 
-    case giocatore1==="Sasso" && giocatore2==="Carta":
-    case giocatore1==="Forbici" && giocatore2==="Sasso":
-    case giocatore1==="Carta" && giocatore2==="Forbici":
+    case giocatore1==="Sasso",  giocatore2==="Carta":
+    case giocatore1==="Forbici", giocatore2==="Sasso":
+    case giocatore1==="Carta", giocatore2==="Forbici":
       return "Giocatore 2, Hai vinto!";
       break;
   }
